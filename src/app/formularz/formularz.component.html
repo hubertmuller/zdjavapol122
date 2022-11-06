@@ -1,6 +1,11 @@
+<!--
+wartosci:
+{{ forma.value | json }}
+bledy:
+    {{ forma.valid }}
+-->
 
-    {{ forma.value | json }}
-
+<h1 *ngIf="bmi">Twoje BMI wynosi {{bmi}}</h1>
 
 <form [formGroup]="forma">
     <div>
@@ -20,9 +25,9 @@
                 Pole jest wymagane
             </li>
         </ul>
-        <!--
-            {{forma.controls.imie.errors | json}}
-        -->
+
+           
+
     </div>
     <div>
         <label for="nazwiskoid">Nazwisko</label>
@@ -30,11 +35,11 @@
     </div>
     <div>
         <label for="wagaid">Waga</label>
-        <input type="text" id="wagaid"  formControlName="waga">
+        <input type="number" id="wagaid"  formControlName="waga">
     </div>
     <div>
         <label for="wzrostid">Wzrost</label>
-        <input type="text" id="wzrostid"  formControlName="wzrost">
+        <input type="number" id="wzrostid"  formControlName="wzrost">
     </div>
     <div>
         <label for="aktywnoscid">Aktywnosc</label>
