@@ -1,0 +1,10 @@
+@import 'definicje.scss';
+
+h1 {
+    color: $kolor-tytulu;
+    font-size: $wielkosc-bazowa-fonta*2;
+}
+
+p {
+    color: $kolor-paragrafu;
+}

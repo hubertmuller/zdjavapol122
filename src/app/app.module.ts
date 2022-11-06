@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { Stopka2Component } from './stopka/stopka.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    Stopka2Component
   ],
   imports: [
     BrowserModule,

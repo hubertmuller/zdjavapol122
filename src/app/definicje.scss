@@ -1,0 +1,10 @@
+$kolor-tytulu: rgb(4, 153, 4);
+$kolor-stopki: blue;
+$kolor-paragrafu: black;
+$wielkosc-bazowa-fonta: 24pt;
+
+@mixin wyrazny-tekst {
+    color: white;
+    background-color: black;
+    padding: 10px;
+}

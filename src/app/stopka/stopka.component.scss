@@ -1,0 +1,46 @@
+@import '../definicje.scss';
+
+h1 {
+    color: $kolor-stopki;
+    font-size: $wielkosc-bazowa-fonta;
+    > span {
+        color: white;
+    }
+    > div {
+        > span {
+            color: red;
+            span {
+                color: yellow;
+            }
+        }
+    }
+    div {
+        span span {
+            color: yellow;
+        }
+    }
+}
+
+h1 {
+    color: $kolor-stopki;
+    font-size: $wielkosc-bazowa-fonta;
+}
+
+h1 > span {
+    color: white;
+}
+
+h1 > div > span {
+    color: red;
+}
+
+h1 div span span{
+    color: yellow;
+}
+
+span {
+    color: rgba($kolor-tytulu, 0.5);
+    background-color: rgba($kolor-tytulu, 0.1);
+    font-size: $wielkosc-bazowa-fonta/2;
+}
+
