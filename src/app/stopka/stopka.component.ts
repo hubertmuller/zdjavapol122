@@ -5,16 +5,20 @@ import { TestowyService } from '../testowy.service';
   selector: 'app-stopka',
   templateUrl: './stopka.component.html',
   styleUrls: ['./stopka.component.scss'],
-  encapsulation: ViewEncapsulation.Emulated
+  encapsulation: ViewEncapsulation.Emulated,
 })
 export class Stopka2Component implements OnInit, OnDestroy {
 
   @Input('imie')
   public tekst = "";
-
-  constructor(public service: TestowyService) { 
-    console.log('stopka konstruktor');
+  
+  constructor(private service: TestowyService) { 
   }
+
+  /*constructor() {
+    // bez depency injection
+    this.service = new TestowyService();
+  }*/
 
   ngOnInit(): void {
     console.log('stopka oninit');
