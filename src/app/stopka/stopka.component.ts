@@ -12,7 +12,7 @@ export class Stopka2Component implements OnInit, OnDestroy {
 
   @Input('imie')
   public tekst = "";
-  
+
   constructor(private service: TestowyService) { 
   }
 
