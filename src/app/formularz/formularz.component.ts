@@ -14,7 +14,18 @@ export class FormularzComponent implements OnInit {
       Validators.minLength(10),
       Validators.required
     ], updateOn: "change"}),
-    nazwisko: new FormControl("Kowalski", {validators: [], updateOn: "change"})
+    nazwisko: new FormControl("Kowalski", {validators: [], updateOn: "change"}),
+    waga: new FormControl(null, {validators: [], updateOn: "change"}),
+    wzrost: new FormControl(null, {validators: [], updateOn: "change"}),
+    aktywnosc: new FormControl(null, {validators: [], updateOn: "change"}),
+    plec: new FormControl(null, {validators: [], updateOn: "change"}),
+    uzywki: new FormGroup(
+      {
+        alkohol: new FormControl(null, {validators: [], updateOn: "change"}),
+        kawa: new FormControl(null, {validators: [], updateOn: "change"}),
+      }
+    )
+
   } )
 
   constructor() { }

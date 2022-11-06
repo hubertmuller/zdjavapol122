@@ -1,6 +1,6 @@
-<!--
+
     {{ forma.value | json }}
--->
+
 
 <form [formGroup]="forma">
     <div>
@@ -27,6 +27,41 @@
     <div>
         <label for="nazwiskoid">Nazwisko</label>
         <input type="text" id="nazwiskoid"  formControlName="nazwisko">
+    </div>
+    <div>
+        <label for="wagaid">Waga</label>
+        <input type="text" id="wagaid"  formControlName="waga">
+    </div>
+    <div>
+        <label for="wzrostid">Wzrost</label>
+        <input type="text" id="wzrostid"  formControlName="wzrost">
+    </div>
+    <div>
+        <label for="aktywnoscid">Aktywnosc</label>
+        <select id="aktywnoscid" formControlName="aktywnosc">
+            <option [ngValue]="null">Wybierz</option>
+            <option [ngValue]="'n'">Niska</option>
+            <option [ngValue]="'s'">Srednia</option>
+            <option [ngValue]="'w'">Wysoka</option>
+        </select>
+    </div>
+    <div>
+        <fieldset>
+            <legend>Plec</legend>
+        <label for="pleck">Kobieta</label>
+        <input type="radio" id="pleck" value="k" formControlName="plec">
+        <label for="plecm">Meżczyzna</label>
+        <input type="radio" id="plecm" value="m" formControlName="plec">
+        </fieldset>
+    </div>
+    <div [formGroup]="forma.controls.uzywki">
+        <fieldset>
+            <legend>Uzywki</legend>
+        <label for="alkid">Alkohol</label>
+        <input type="checkbox" id="alkid" formControlName="alkohol">
+        <label for="kawid">Kawa</label>
+        <input type="checkbox" id="kawid" formControlName="kawa">
+        </fieldset>
     </div>
 </form>
 
