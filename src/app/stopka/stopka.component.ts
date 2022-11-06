@@ -6,6 +6,7 @@ import { TestowyService } from '../testowy.service';
   templateUrl: './stopka.component.html',
   styleUrls: ['./stopka.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
+  //providers: [TestowyService]
 })
 export class Stopka2Component implements OnInit, OnDestroy {
 
@@ -30,6 +31,10 @@ export class Stopka2Component implements OnInit, OnDestroy {
 
   powitanie(): string {
     return this.service.powitanie(this.tekst);
+  }
+
+  id(): number {
+    return this.service.id();
   }
 
 }
