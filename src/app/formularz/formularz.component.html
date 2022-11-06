@@ -1,0 +1,33 @@
+<!--
+    {{ forma.value | json }}
+-->
+
+<form [formGroup]="forma">
+    <div>
+        <label for="imieid">Imię</label>
+        <input type="text" id="imieid" formControlName="imie">
+        <ul class="blad" *ngIf="forma.controls.imie.errors">
+            <li *ngIf="forma.controls.imie.errors['pattern']">
+                Imię nie spełnia oczekiwanego wzorca (tylko litery i spacja)
+            </li>
+            <li *ngIf="forma.controls.imie.errors['minlength']">
+                Imię jest zbyt krótkie. Obecnie ma 
+                {{forma.controls.imie.errors['minlength'].actualLength}} 
+                znaków a powino miec przynajmiej 
+                {{forma.controls.imie.errors['minlength'].requiredLength}} znakow.
+            </li>
+            <li *ngIf="forma.controls.imie.errors['required']">
+                Pole jest wymagane
+            </li>
+        </ul>
+        <!--
+            {{forma.controls.imie.errors | json}}
+        -->
+    </div>
+    <div>
+        <label for="nazwiskoid">Nazwisko</label>
+        <input type="text" id="nazwiskoid"  formControlName="nazwisko">
+    </div>
+</form>
+
+<div (click)="zmienNazwisko('Nowak')">Zmien</div>

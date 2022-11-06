@@ -1,8 +1,14 @@
 @import 'definicje.scss';
 
+header {
+    background-color: #eee;
+    margin: 0;
+    padding: 10px;
+}
+
 h1 {
     color: $kolor-tytulu;
-    font-size: $wielkosc-bazowa-fonta*2;
+    font-size: $wielkosc-bazowa-fonta/2;
 }
 
 p {

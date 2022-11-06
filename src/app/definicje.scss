@@ -1,7 +1,8 @@
-$kolor-tytulu: rgb(4, 153, 4);
-$kolor-stopki: blue;
+$kolor-tytulu: rgb(47, 138, 249);
+$kolor-stopki: rgb(0, 115, 255);
 $kolor-paragrafu: black;
 $wielkosc-bazowa-fonta: 24pt;
+$kolorBledu: red;
 
 @mixin wyrazny-tekst {
     color: white;
