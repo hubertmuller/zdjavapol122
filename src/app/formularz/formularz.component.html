@@ -70,6 +70,9 @@ bledy:
         <input type="checkbox" id="kawid" formControlName="kawa">
         </fieldset>
     </div>
+    <div *ngIf="forma.valid">
+        <input type="button" value="Wyślij">
+    </div>
 </form>
 
 <div (click)="zmienNazwisko('Nowak')">Zmien</div>

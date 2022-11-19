@@ -14,7 +14,7 @@ export class FormularzComponent implements OnInit {
   public forma = new FormGroup( {
     imie: new FormControl("Jan", {validators: [
       Validators.pattern('[a-zA-Z ]*'), 
-      Validators.minLength(10),
+      Validators.minLength(2),
       Validators.required
     ], updateOn: "change"}),
     nazwisko: new FormControl("Kowalski", {validators: [], updateOn: "change"}),

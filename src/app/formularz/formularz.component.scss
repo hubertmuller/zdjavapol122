@@ -23,3 +23,14 @@ h1 {
     padding: 10px;
     border: 1px solid rgb(235, 12, 12)
 }
+
+input[type=button] {
+    width: 100%;
+    background-color: #faa;
+    border: 1px solid #f55;
+    padding: 10px;
+    &:hover {
+        background-color: rgb(243, 170, 0);
+        cursor: pointer;
+    }
+}
