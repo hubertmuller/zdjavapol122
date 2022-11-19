@@ -6,17 +6,23 @@ import { AppComponent } from './app.component';
 import { Stopka2Component } from './stopka/stopka.component';
 import { FormularzComponent } from './formularz/formularz.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ListaComponent } from './lista/lista.component';
+import { NawigacjaComponent } from './nawigacja/nawigacja.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     Stopka2Component,
-    FormularzComponent
+    FormularzComponent,
+    ListaComponent,
+    NawigacjaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

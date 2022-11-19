@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ZdrowieService } from '../zdrowie.service';
 
@@ -7,7 +7,7 @@ import { ZdrowieService } from '../zdrowie.service';
   templateUrl: './formularz.component.html',
   styleUrls: ['./formularz.component.scss']
 })
-export class FormularzComponent implements OnInit {
+export class FormularzComponent implements OnInit, OnDestroy {
 
   public bmi: number = 0;
 
@@ -34,6 +34,9 @@ export class FormularzComponent implements OnInit {
   constructor(private zdrowie: ZdrowieService) { }
 
   ngOnInit(): void {
+
+    console.log('Formularz onInit');
+
     this.forma.controls.imie.valueChanges.subscribe( (value) => {
       if (value === 'Hubert') {
         this.forma.controls.nazwisko.setValue('Muller');
@@ -51,6 +54,10 @@ export class FormularzComponent implements OnInit {
       }
     })
 
+  }
+
+  ngOnDestroy(): void {
+    console.log('Formularz onDestroy');
   }
 
   zmienNazwisko(nazwisko: string): void {
