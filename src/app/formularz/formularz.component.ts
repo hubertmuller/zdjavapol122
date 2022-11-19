@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Osoba, OsobyService } from '../osoby.service';
 import { ZdrowieService } from '../zdrowie.service';
 
 @Component({
@@ -24,14 +25,17 @@ export class FormularzComponent implements OnInit, OnDestroy {
     plec: new FormControl(null, {validators: [], updateOn: "change"}),
     uzywki: new FormGroup(
       {
-        alkohol: new FormControl(null, {validators: [], updateOn: "change"}),
-        kawa: new FormControl(null, {validators: [], updateOn: "change"}),
+        alkohol: new FormControl(false, {validators: [], updateOn: "change"}),
+        kawa: new FormControl(false, {validators: [], updateOn: "change"}),
       }
     )
 
   } )
+  public wysylaniewToku = false;
+  public udanyZapis= false;
 
-  constructor(private zdrowie: ZdrowieService) { }
+  constructor(private zdrowie: ZdrowieService,
+              private osoby: OsobyService) { }
 
   ngOnInit(): void {
 
@@ -62,6 +66,44 @@ export class FormularzComponent implements OnInit, OnDestroy {
 
   zmienNazwisko(nazwisko: string): void {
     this.forma.controls.nazwisko.setValue(nazwisko);
+  }
+
+  wyslijFormularz() {
+    const wartosciFormy = this.forma.controls;
+    const osoba: Osoba = {
+      imie: wartosciFormy.imie.value,
+      nazwisko: wartosciFormy.nazwisko.value,
+      plec: wartosciFormy.plec.value,
+      waga: wartosciFormy.waga.value,
+      wzrost: wartosciFormy.wzrost.value,
+      aktywnosc: wartosciFormy.aktywnosc.value,
+      uzywki: {
+        kawa: wartosciFormy.uzywki.controls.kawa.value,
+        alkohol: wartosciFormy.uzywki.controls.alkohol.value
+      }
+    };
+    this.wysylaniewToku = true;
+    this.osoby.wyslijOsobe(osoba).subscribe( (_v) => {
+      this.wysylaniewToku = false;
+      this.udanyZapis = true;
+      this.zerujForme();
+      console.log('wyslano');
+    });
+  }
+
+  zerujForme() {
+    this.forma.setValue({
+        imie: null,
+        nazwisko: null,
+        waga: null,
+        wzrost: null,
+        aktywnosc: null,
+        plec: null,
+        uzywki: {
+            alkohol: false,
+            kawa: false,
+        }
+    });
   }
 
 }

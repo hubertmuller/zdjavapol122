@@ -5,9 +5,15 @@ bledy:
     {{ forma.valid }}
 -->
 
+<div *ngIf="wysylaniewToku">
+Wysylam formularz...
+</div>
 
+<div *ngIf="udanyZapis && !wysylaniewToku">
+    Zapis powiódł się!
+</div>
 
-<form [formGroup]="forma">
+<form [formGroup]="forma" *ngIf="!wysylaniewToku">
     <div>
         <label for="imieid">Imię</label>
         <input type="text" id="imieid" formControlName="imie">
@@ -71,8 +77,9 @@ bledy:
         </fieldset>
     </div>
     <div *ngIf="forma.valid">
-        <input type="button" value="Wyślij">
+        <input type="button" value="Wyślij" (click)="wyslijFormularz()">
     </div>
+
+    <div (click)="zmienNazwisko('Nowak')">Zmien</div>
 </form>
 
-<div (click)="zmienNazwisko('Nowak')">Zmien</div>
