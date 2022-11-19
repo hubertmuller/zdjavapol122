@@ -1,16 +1,20 @@
-<table>
+<table *ngIf="listaOsob">
     <caption>Osoby</caption>
     <tr>
+    <th>Id</th>
     <th>Imie</th>
     <th>Nazwisko</th>
+    <th>Plec</th>
     </tr>
-    <tr>
-        <td>imie</td>
-        <td>nazwisko</td>
+    <tr *ngFor="let osoba of listaOsob">
+        <td>{{osoba.id}} </td>
+        <td>{{osoba.imie}}</td>
+        <td>{{osoba.nazwisko}}</td>
+        <td>{{(osoba.plec === 'k')?'kobieta':'mezczyzna'}}</td>
     </tr>
 </table>
 
 
-<div>
+<div *ngIf="!listaOsob">
     Ładuje dane...
 </div>

@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { OsobyService } from '../osoby.service';
+import { Osoba, OsobyService } from '../osoby.service';
 
 @Component({
   selector: 'app-lista',
@@ -8,7 +8,7 @@ import { OsobyService } from '../osoby.service';
 })
 export class ListaComponent implements OnInit, OnDestroy {
 
-  public listaOsob: any;
+  public listaOsob: Osoba[] = [];
 
   constructor(private osoby: OsobyService) { }
 
