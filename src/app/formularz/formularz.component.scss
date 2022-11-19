@@ -4,3 +4,22 @@ ul.blad {
     font-size: $wielkosc-bazowa-fonta/4;
     color: $kolorBledu;
 }
+
+legend, fieldset {
+    padding: 0;
+    margin: 0;
+}
+
+fieldset {
+    border: 0;
+}
+
+form > div {
+    margin-bottom: 15px;
+}
+
+h1 {
+    background-color: #fdd;
+    padding: 10px;
+    border: 1px solid rgb(235, 12, 12)
+}

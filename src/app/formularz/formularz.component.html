@@ -5,7 +5,7 @@ bledy:
     {{ forma.valid }}
 -->
 
-<h1 *ngIf="bmi">Twoje BMI wynosi {{bmi}}</h1>
+
 
 <form [formGroup]="forma">
     <div>
@@ -25,9 +25,6 @@ bledy:
                 Pole jest wymagane
             </li>
         </ul>
-
-           
-
     </div>
     <div>
         <label for="nazwiskoid">Nazwisko</label>
@@ -41,6 +38,11 @@ bledy:
         <label for="wzrostid">Wzrost</label>
         <input type="number" id="wzrostid"  formControlName="wzrost">
     </div>
+
+    <div>
+        <h1 *ngIf="bmi">Twoje BMI wynosi {{bmi | number:'1.2-2'}}</h1>
+    </div>
+
     <div>
         <label for="aktywnoscid">Aktywnosc</label>
         <select id="aktywnoscid" formControlName="aktywnosc">

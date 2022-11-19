@@ -8,6 +8,8 @@ export class ZdrowieService {
   constructor() { }
 
   bmi(wagaKg: number, wzrostCm: number): number {
-    return wagaKg/((wzrostCm / 100)**2);
+    console.log(`do metody bmi wprowadzono wagaKg=${wagaKg}, wzrostCm=${wzrostCm}`);
+    const bmi = wagaKg/((wzrostCm / 100)**2);
+    return bmi;
   }
 }
