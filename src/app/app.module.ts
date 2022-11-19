@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ListaComponent } from './lista/lista.component';
 import { NawigacjaComponent } from './nawigacja/nawigacja.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TestPipe } from './test.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     Stopka2Component,
     FormularzComponent,
     ListaComponent,
-    NawigacjaComponent
+    NawigacjaComponent,
+    TestPipe
   ],
   imports: [
     BrowserModule,

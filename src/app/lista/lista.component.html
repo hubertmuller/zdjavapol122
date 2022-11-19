@@ -8,7 +8,7 @@
     </tr>
     <tr *ngFor="let osoba of listaOsob">
         <td>{{osoba.id}} </td>
-        <td>{{osoba.imie}}</td>
+        <td>{{osoba.imie | test:'Pan '}}</td>
         <td>{{osoba.nazwisko}}</td>
         <td>{{(osoba.plec === 'k')?'kobieta':'mezczyzna'}}</td>
     </tr>
